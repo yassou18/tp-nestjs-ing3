@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { CreateTravelDto } from './dto/create-travel.dto';
 import { UpdateTravelDto } from './dto/update-travel.dto';
-//
+
 @Injectable()
 export class TravelService {
   private trips=[{id:1,name:'To China',price:9000},
@@ -18,7 +18,9 @@ export class TravelService {
 
   findOne(id: number) {
    // return `This action returns a #${id} travel`;
-   
+   const p=this.trips.find(x=>x,id==id);
+   return p;
+
   }
 
   update(id: number, updateTravelDto: UpdateTravelDto) {
